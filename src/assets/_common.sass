@@ -1,0 +1,125 @@
+body
+	font-family: Arial, sans-serif
+
+input
+	border-radius: 4px
+	border: 1px solid #ccc
+	font-family: arial, sans-serif
+
+#app
+	max-width: 800px
+	margin: auto
+
+.title
+	text-align: center
+	font-weight: bold
+
+.list
+	padding: 0
+	margin: 0
+	list-style: none
+	&_item
+		padding: 0
+		margin-bottom: 10px
+
+.list-item
+	border-bottom: 1px solid #ccc
+	list-style: none
+	&_row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 10px
+		&--xs-col
+			@media screen and (max-width: 480px)
+				flex-direction: column
+				& > *:not(:last-child)
+					margin-bottom: 10px
+	&_title
+		font-weight: bold
+	&_wrap
+		&--fill
+			flex: 1
+
+.btn
+	$bgColor: #118ab2
+	$bgColorDanger: #ef476f
+	$bgColorWarning: #ffd166
+	$bgColorAction: #05C793
+	display: inline-block
+	box-sizing: border-box
+	min-width: 90px
+	padding: 10px 15px
+	border: none
+	border-radius: 3px
+	text-decoration: none
+	font-size: 14px
+	line-height: 14px
+	color: #000
+	background-color: $bgColor
+	text-align: center
+	cursor: pointer
+	user-select: none
+	color: #fff
+	&:hover
+		background-color: darken($bgColor, 10)
+	&:not(:last-child)
+		margin-right: 10px
+	&--danger
+		background-color: $bgColorDanger
+		&:hover
+			background-color: darken($bgColorDanger, 10)
+	&--warning
+		background-color: $bgColorWarning
+		&:hover
+			background-color: darken($bgColorWarning, 10)
+		color: #000
+	&--action
+		background-color: $bgColorAction
+		&:hover
+			background-color: darken($bgColorAction, 10)
+	&--disabled
+		pointer-events: none
+		opacity: .8
+
+.modal
+	height: 100%
+	width: 100%
+	position: fixed
+	top: 0
+	left: 0
+	&_back
+		height: 100%
+		width: 100%
+		background-color: rgba(0,0,0,0.7)
+	&_front
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		background-color: #fff
+		padding: 30px
+		border-radius: 6px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&_title
+		text-align: center
+		font-size: 20px
+		margin-bottom: 20px
+	&_content
+		min-width: 200px
+
+.form
+	display: flex
+	font-size: 16px
+	&_field
+		min-width: 140px
+		flex: 1
+		padding: 10px
+	&_submit
+		min-width: 120px
+		font-size: 16px
+		line-height: 17px
+		margin-left: 10px
